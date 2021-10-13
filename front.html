@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: rgb(47,48,53);
+            }
+                 #topMainDiv{
+                     
+            background: url(https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png) no-repeat;
+    background-size: cover;
+    background-position: 50%;
+   
+    height: 400px;
+    width: 101%;
+                margin-top: -10px;
+                margin-left: -0.5%;
+                padding-top: 70px;
+            }
+
+            #nav{
+               
+                width: 100%;
+                display: inline-flex;
+               
+                transition: all .3s;
+                background: transparent;
+                margin-top: 20px;
+                margin-left: 6px;
+                z-index: 1000;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                
+                
+
+            }
+            #nav>img{
+                width: 100px;
+               
+                margin-left: 20px;
+            }
+            #postButton{
+                display: inline-flex;
+                    background-color:rgb(26,184,110) ;
+                    color: white;
+                    font-size: 16px;
+                    border-radius: 3px;
+                    border:transparent;
+                    height: 18px;
+                    padding: 10px;
+                    margin-left: 15px;
+                    margin-top: 5px;
+                    font-size: 1rem;
+                    
+            }
+            #postButton>img{
+                width: 25px;
+                height: 25px;
+                margin-top: -2px;
+
+            }
+            #postButton>span{
+                color: white;
+                    
+                    font-weight:900;
+                    margin-left: 10px;
+            }
+            #searchDiv{
+                background-color: tomato;
+                width: 42%;
+                margin-left: 150px;
+                height: 36px;
+                margin-top: 5px;
+                background-color: rgb(255,255,255,0.2);
+                border-radius: 3px;
+            }
+            #searchDiv>input{
+                width: 92%;
+                height: 29px;
+                background: transparent;
+                border: transparent;
+                padding-left: 10px;
+                
+                font-size: 16px;
+                padding-top: 5px;
+                
+            }
+            #searchDiv>img{
+               float:right;
+                margin-top: 8px;
+                margin-right: 8px;
+            }
+            .medal{
+                margin-left: 30px;
+                margin-top: 8px;
+            }
+            #adButton{
+                background-color:rgb(102,52,239);
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 700;
+                    border-radius: 3px;
+                    border:transparent;
+                    height: 38px;
+                    padding: 8px;
+                    margin-left: 15px;
+                    margin-top: 5px;
+                    
+            }
+            #signin{
+                color: white;
+                    font-size: 17px;
+                    font-weight: 700;
+                    margin-left: 22px;
+            }
+            #SignupButton{
+                background-color:rgb(26,184,110) ;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 700;
+                    border-radius: 3px;
+                    border:transparent;
+                    height: 38px;
+                    padding: 8px;
+                    margin-left: 22px;
+                    margin-top: 5px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+            }
+            #discoverP{
+                font-size: 22px;
+                font-weight: 900;
+                color: rgb(163,213,236);
+                width: 100%;
+                text-align: center;
+            
+
+            }
+            .Tag {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 3px;
+    
+    background-size: auto 115px;
+    background-repeat: repeat-x;
+    background-position: 100% 0;
+    
+}
+.Tag-title {
+    font-family: Proxima Nova Bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 12px;
+    width: 89.5%;
+    text-align: center;
+    color: #fff;
+    
+    font-size: 14px;
+}
+        #tagDiv{
+            display: flex;
+            width: 100%;
+            margin: auto;
+        }
+        #bottomDiv{
+            width: 90%;
+            margin: auto;
+        }
+        #bottomDivDiv1{
+            width: 100%;
+            display: inline-flex;
+        }
+        #bottomDivDiv1>p{
+            font-size: 17px;
+            font-weight: 900;
+            color: rgb(255,255,255,0.6);
+            margin-left: 20px;
+        }
+        #tagDiv>div{
+            margin-left: 20px;
+        }
+        .Tag-posts{
+            font-size: 11px;
+            color: rgb(255,255,255,0.5);
+            margin-top: 6px;
+        }
+        #bottomDivDiv3>div:nth-child(1){
+            display: inline-flex;
+            width: 90%;
+            margin-left: 20px;
+        }
+        #bottomDivDiv3{
+            display: inline-flex;
+            width: 80%;
+            margin-left: 130px;
+            margin-top: 30px;
+        }
+        #lastDiv{
+            display:flex;
+            width: 80%;
+            margin: auto;
+        }
+        #lastDiv>div{
+            width: 23%;
+            
+            height: 100px;
+            margin-left: 2%;
+        }
+        .imgDiv{
+            border-radius: 6px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="topMainDiv">
+        <div id="nav">
+           <img src= "file:///C:/Users/Dell/Downloads/imgur.svg" />
+           <div id="postButton">
+            <img src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg">
+            <span>New post</span>
+        </div>
+           
+        
+            <div id="searchDiv">
+                <input type="text" oninput="search1()" id="search"   placeholder="Images,#tags,@users oh my!"/>
+                <img onclick="search2()"   src="https://s.imgur.com/desktop-assets/desktop-assets/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg">
+            </div>
+            <svg width="32" height="32" viewBox="0 -2 34 34" class="medal" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Comment Leaderboard</title><g fill="none" fill-rule="evenodd"><path d="M0 0h32v32H0z"></path><g transform="translate(6.5 3)" stroke="#ffffff" stroke-width="2"><path d="M4 16.977v7.076l5.5-2.481 5.5 2.481v-7.076l-5.5 1.245L4 16.977z"></path><circle cx="9.5" cy="9.5" r="8.5"></circle></g></g></svg>
+            <button id="adButton">Go Ad-Free</button>
+            <p id="signin">Sign In</p>
+            <button id="SignupButton">Sign up</button>
+        </div>
+        <div id="discoverP">
+            <p >Discover the magic of the Internet.</p>
+        </div>
+        <div id="bottomDiv">
+            <div id="bottomDivDiv1">
+                <p>EXPLORE TAGS</p>
+                <P style="margin-left: 78%;">MORE TAGS +</P>
+            </div>
+
+        <div id="tagDiv">
+            <div class="Tag " href="/t/pokemon?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/6Hxkaw9_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 232px;">
+                <div class="Tag-title" style="background-color: rgb(197, 101, 121);">
+                    <div class="Tag-name">pokemon</div>
+                    <div class="Tag-posts">FEATURED • 52,200 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/halloween?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/e9C2F3w_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(58, 40, 69); width: 77%;">
+                    <div class="Tag-name">Halloween</div>
+                <div class="Tag-posts">46,492 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/extra_life?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/9mWcJo6_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(73, 70, 176);width: 77%;">
+                    <div class="Tag-name">Extra Life</div>
+                    <div class="Tag-posts">453 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/pumpkin?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/UNHGCt5_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(255, 112, 0);width: 77%;">
+                    <div class="Tag-name">pumpkin</div>
+                    <div class="Tag-posts">3,654 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/funny?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/9r1qCDq_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(99, 56, 117);width: 77%;">
+                    <div class="Tag-name">funny</div>
+                    <div class="Tag-posts">2,697,015 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/oc?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/4LBx79U_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(171, 128, 184);width: 77%;">
+                    <div class="Tag-name">oc</div>
+                    <div class="Tag-posts">37,000 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/coronavirus?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/qaYq4fG_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(81, 83, 90);width: 77%;">
+                    <div class="Tag-name">coronavirus</div>
+                    <div class="Tag-posts">35,286 Posts</div>
+                </div>
+            </div>
+            <div class="Tag " href="/t/aww?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/avRBRpN_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(96, 174, 187);width: 77%;">
+                    <div class="Tag-name">aww</div>
+                    <div class="Tag-posts">761,312 Posts</div>
+                </div>
+            </div>
+           
+            <div class="Tag " href="/t/gaming?source=featured_tag_module" style="background-image: url(&quot;https://i.imgur.com/nrFCOUB_d.jpg?maxwidth=800&amp;shape=thumb&amp;fidelity=high&quot;); height: 130px; width: 110px;">
+                <div class="Tag-title" style="background-color: rgb(43, 26, 90);width: 78%;">
+                    <div class="Tag-name">gaming</div>
+                    <div class="Tag-posts">296,030 Posts</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bottomDivDiv3">
+            <div>
+                <p style="font-size: 18px; font-weight: 900;color: rgb(255,255,255,0.7);">MOST VIRAL</p>
+                <p style="margin-left: 75%;font-size: 18px; font-weight: 900;color: rgb(255,255,255,0.7);">NEWEST</p>
+            </div>
+            <div style="margin-top: 20px;">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="17" height="17"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"></rect><g><g><g><polygon points="6.17870715566179,0 1.1573245256338325,0 0.15306144952774048,0 0.15306144952774048,1.0042672515679527 0.15306144952774048,6.0256540079346905 0.15306144952774048,7.02991762439467 1.1573245256338325,7.02991762439467 6.17870715566179,7.02991762439467 7.18298727747689,7.02991762439467 7.18298727747689,6.0256540079346905 7.18298727747689,1.0042672515679527 7.18298727747689,0 "></polygon></g></g><g><g><polygon points="6.278707504272461,10 1.25732421875,10 0.25306129455566406,10 0.25306129455566406,11.004266738891602 0.25306129455566406,16.025653839111328 0.25306129455566406,17.029918670654297 1.25732421875,17.029918670654297 6.278707504272461,17.029918670654297 7.282987594604492,17.029918670654297 7.282987594604492,16.025653839111328 7.282987594604492,11.004266738891602 7.282987594604492,10 "></polygon></g></g><g><g><polygon points="15.978708267211914,9.900003053247929 10.957324981689453,9.900003053247929 9.953062057495117,9.900003053247929 9.953062057495117,10.90426979213953 9.953062057495117,15.925656892359257 9.953062057495117,16.929921723902225 10.957324981689453,16.929921723902225 15.978708267211914,16.929921723902225 16.982988357543945,16.929921723902225 16.982988357543945,15.925656892359257 16.982988357543945,10.90426979213953 16.982988357543945,9.900003053247929 "></polygon></g></g><g><g><polygon points="15.878707885742188,-0.10000000149011612 10.857324600219727,-0.10000000149011612 9.85306167602539,-0.10000000149011612 9.85306167602539,0.9042667374014854 9.85306167602539,5.925653837621212 9.85306167602539,6.929918669164181 10.857324600219727,6.929918669164181 15.878707885742188,6.929918669164181 16.88298797607422,6.929918669164181 16.88298797607422,5.925653837621212 16.88298797607422,0.9042667374014854 16.88298797607422,-0.10000000149011612 "></polygon></g></g></g></svg>
+            </div>
+        </div>
+        <div id="lastDiv">
+            <div id="div1"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+
+        </div>
+
+
+        </div>
+       
+        </div>
+    </body>
+</html>
+<script>
+
+var div1 = document.getElementById("div1");
+var div2 = document.getElementById("div2");
+var div3 = document.getElementById("div3");
+var div4 = document.getElementById("div4");
+
+
+var search = document.getElementById("search");
+function debounce(func, delay) {
+   
+  let timer;
+  
+    let context = this;
+    let args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        console.log("1")
+        div1.innerHTML=null;
+    div2.innerHTML=null;
+    div3.innerHTML=null;
+    div4.innerHTML=null;
+      func()
+    }, delay);
+  
+}
+
+
+function search1(){
+    console.log("1")
+   
+    debounce(handleSearch,1000)
+}
+function search2(){
+    handleSearch()
+}
+
+
+async function handleSearch() {
+  var search = document.getElementById("search").value;
+  if(search.length==0){
+      handleSearch1()
+  }
+  try {
+    let res = await fetch(
+      `https://api.unsplash.com/search/photos?per_page=1000&query=${search}&client_id=xRf-SuV5UAdpxw3s_YdLrGyYyn7IaUW8Q1UebZLhtyA`
+    );
+    // let data = res.data.results;
+    var items = await res.json();
+    console.log("items:", items);
+    appendImages(items.results);
+  } catch (e) {
+    console.log("e:", e);
+  }
+
+  // console.log(search);
+  console.log("Button Clicked");
+}
+async function handleSearch1() {
+  var search = document.getElementById("search").value;
+  try {
+    let res = await fetch(
+      `https://api.unsplash.com/search/photos?per_page=1000&query=random&client_id=xRf-SuV5UAdpxw3s_YdLrGyYyn7IaUW8Q1UebZLhtyA`
+    );
+    // let data = res.data.results;
+    var items = await res.json();
+    console.log("items:", items);
+    appendImages(items.results);
+  } catch (e) {
+    console.log("e:", e);
+  }
+
+  console.log("handleserach",search);
+  console.log("Button Clicked");
+}
+
+handleSearch1();
+
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight
+  ) {
+    handleSearch();
+
+     handleSearch1();
+     console.log("scroll");
+  }
+});
+
+function appendImages(items) {
+   
+   
+    
+    
+  let arr1 = []
+    arr2 = []
+    arr3 = []
+    arr4 = []
+   
+
+  let x = Math.floor(items.length / 4);
+
+  for (let i = 0; i < x; i++) arr1.push(items[i]);
+  for (let i = x; i < 2 * x; i++) arr2.push(items[i]);
+  for (let i = 2 * x; i < 3 * x; i++) arr3.push(items[i]);
+ 
+  for (let i = 3 * x; i < items.length; i++) arr4.push(items[i]);
+
+  arr1.forEach((el) => {
+     
+    let div = document.createElement("div");
+    div.style.background = "rgb(70,75,81)";
+    div.style.margin = "10px 0px";
+    div.setAttribute("class", "imgDiv");
+
+    let img = document.createElement("img");
+    img.src = el.urls.small;
+    img.style.width = "100%";
+
+    let para = document.createElement("p");
+    para.innerHTML = el.alt_description;
+    para.style.padding = "10px 10px";
+    para.style.fontSize = "14px";
+    para.style.color="white"
+    div.append(img, para);
+    div1.append(div);
+  });
+
+  arr2.forEach((el) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "imgDiv");
+    div.style.background = "rgb(70,75,81)";
+    div.style.margin = "10px 0px";
+
+    let img = document.createElement("img");
+    img.src = el.urls.small;
+    img.style.width = "100%";
+
+    let para = document.createElement("p");
+    para.innerHTML = el.alt_description;
+    para.style.padding = "10px 10px";
+    para.style.fontSize = "14px";
+    para.style.color="white"
+    div.append(img, para);
+    div2.append(div);
+  });
+
+  arr3.forEach((el) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "imgDiv");
+    div.style.background = "rgb(70,75,81)";
+    div.style.margin = "10px 0px";
+
+    let img = document.createElement("img");
+    img.src = el.urls.small;
+    img.style.width = "100%";
+
+    let para = document.createElement("p");
+    para.innerHTML = el.alt_description;
+    para.style.padding = "10px 10px";
+    para.style.fontSize = "14px";
+    para.style.color="white"
+    div.append(img, para);
+    div3.append(div);
+  });
+
+  arr4.forEach((el) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "imgDiv");
+    div.style.background = "rgb(70,75,81)";
+    div.style.margin = "10px 0px";
+
+    let img = document.createElement("img");
+    img.src = el.urls.small;
+    img.style.width = "100%";
+
+    let para = document.createElement("p");
+    para.innerHTML = el.alt_description;
+    para.style.padding = "10px 10px";
+    para.style.fontSize = "14px";
+    para.style.color="white"
+
+    div.append(img, para);
+    div4.append(div);
+  });
+
+ 
+}
+
+</script>
